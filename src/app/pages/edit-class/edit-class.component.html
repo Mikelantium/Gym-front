@@ -1,0 +1,40 @@
+<div class="editar">
+    <div class="editar-clase">
+        <h1>Editar clase</h1>
+        <div class="editar-clase-form">
+
+            <form [formGroup]="classForm" (ngSubmit)="editClass()">
+                <div>
+                    <input type="text" placeholder="nombre" formControlName="name"/>
+                    <p *ngIf="(submited && classForm?.get('name')?.hasError('required'))">Este campo es requerido</p>
+                </div>
+                <div>
+                    <input type="text" placeholder="duración" formControlName="duration"/>
+                    <p *ngIf="(submited && classForm?.get('duration')?.hasError('required'))">Este campo es requerido</p>
+                </div>
+                <div>
+                    <input type="text" placeholder="sala" formControlName="class"/>
+                </div>
+                <div>
+                    <input type="text" placeholder="tipo" formControlName="type"/>
+                </div>
+                <div>
+                    <input type="text" placeholder="imagen" formControlName="img"/>
+                    <p *ngIf="(submited && classForm?.get('img')?.hasError('required'))">Este campo es requerido</p>
+                </div>
+                <button>Guardar cambios</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div *ngIf ="clase" class="editar-clase extra">
+        <div class="editado">
+            <h2>{{clase.name}}</h2>
+            <h4>Duración: {{clase.duration}}</h4>
+            <h4> Sala: {{clase.class}}</h4>
+            <h4>Tipo: {{clase.type}}</h4>
+            <img src={{clase.img}} alt={{clase.name}}/>
+        </div>
+    </div>
+</div>

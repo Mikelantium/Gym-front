@@ -1,0 +1,35 @@
+.nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0px 40px;
+
+    &-logo{
+        width: 150px;
+    }
+    &-buttons {
+        display: flex;
+        gap: 5px;
+
+        button {
+            padding: 20px;
+            border-radius: 10%;
+            background-color: rgb(112, 112, 112);
+        }
+        button:hover {
+            background-color: #d02b2f;
+            transform: scale(1.2, 1.2);
+        }
+        
+        a {
+            text-decoration: none;
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
+        } 
+
+    }
+
+}
+

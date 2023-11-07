@@ -1,0 +1,12 @@
+<div class="clases">
+    <div class="clase" *ngFor="let clase of listado">
+        <h2>{{clase.name}}</h2>
+        <h4>{{clase.duration}}</h4>
+        <img src="{{clase.img}}" alt="{{clase.name}}"/>
+        <div class="clase-buttons">
+            <button><a routerLink="/clases/{{clase._id}}">Ver más</a></button>
+            <button *ngIf="classApi.getToken()">Añadir a favoritos</button>
+        </div>
+
+    </div>
+</div>

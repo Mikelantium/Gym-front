@@ -1,0 +1,15 @@
+<div class="clases">
+    <div class="clase" *ngIf="clase">
+        <h2>{{clase.name}}</h2>
+        <h4>Duración: {{clase.duration}}</h4>
+        <h4> Sala: {{clase.class}}</h4>
+        <h4>Tipo: {{clase.type}}</h4>
+        <img src="{{clase.img}}" alt="{{clase.name}}"/>
+        <div class="clase-buttons">
+            <button><a routerLink="/clases">Volver</a></button>
+            <button *ngIf="classApi.getToken() && classApi.isAdminRole()" (click)="editar()">Editar</button>
+            <button *ngIf="classApi.getToken() && classApi.isAdminRole()" (click)="borrar()">Borrar</button>
+        </div>
+    </div>
+</div>
+
